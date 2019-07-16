@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 #
 # a simple dmenu mocp script to select song from playlist
 # by zordsdavini, 2016
