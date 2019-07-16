@@ -8,10 +8,11 @@
 # TODO: I don't know why grep gives in DOS format – removed it with `tr`
 
 # check mocp is running
-rez=$(mocp -i | wc -l)
-if [ $rez -lt 1 ] ; then
-  mocp -S 
-fi
+rez=$(mocp -i | grep -E ^State | cut -d ":" -f2 | cut -c 2-)
+case $rez in
+	PLAY|PAUSE|STOP) ;;
+	*) mocp -S;;
+esac
 
 # format dmenu
 # DMENU="dmenu -i -p → -fn Andika-8 -nb #15181a -nf #00ff00 -sb #079822 -sf #fff -h 24 -l 50"
