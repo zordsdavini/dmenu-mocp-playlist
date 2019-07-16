@@ -20,4 +20,6 @@ DMENU='dmenu -i -p → -fn Andika-8 -nb #15181a -nf #00ff00 -sb #079822 -sf #fff
 choice=$(grep -u -E "^[^#]" ~/.moc/playlist.m3u | tr -d '\015' | $DMENU)
 
 # play selected song. If error it will do nothing
-mocp -l "$choice"
+if [ -n "$choice" ]; then
+	mocp -l "$choice"
+fi
