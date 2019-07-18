@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 #
-# a simple dmenu mocp script to select song from playlist
-# by zordsdavini, 2016
+# a simple dmenu mocp script to select song from playlist by
+# zordsdavini, 2016
+# Cyril Augier, 2019
 #
 ###
 
