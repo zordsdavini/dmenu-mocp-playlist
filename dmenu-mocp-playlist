@@ -17,7 +17,12 @@ esac
 
 # format dmenu
 DMENU() {
-	dmenu -i -p → -fn "Andika-8" -nb "#15181a" -nf "#00ff00" -sb "#079822" -sf "#fff" -h "24" -l "$1"
+	# For very large playlists, set a fixed value of 50 (lines).
+	# Otherwise, some songs may be off screen.
+	if [ "$1" -gt 50 ]; then
+		lines=50
+	fi
+	dmenu -i -p → -fn "Andika-8" -nb "#15181a" -nf "#00ff00" -sb "#079822" -sf "#fff" -h "24" -l "$lines"
 }
 
 # get playlist
